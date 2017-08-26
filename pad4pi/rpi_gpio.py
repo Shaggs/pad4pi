@@ -39,7 +39,7 @@ class KeypadFactory():
 
         return self.create_keypad(KEYPAD, ROW_PINS, COL_PINS)
 
-    def create_4_by_4_keypad(self):
+    def keypad_4x4(self):
 
         KEYPAD = [
             [1,2,3,"A"],
@@ -48,8 +48,9 @@ class KeypadFactory():
             ["*",0,"#","D"]
         ]
 
-        ROW_PINS = [4,14,15,17]
-        COL_PINS = [18,27,22,23]
+        ROW_PINS =  [31,33,35,37]
+        COL_PINS = [36,38,40,29]
+
 
         return self.create_keypad(KEYPAD, ROW_PINS, COL_PINS)
 
@@ -64,7 +65,7 @@ class Keypad():
 
         self._last_key_press_time = 0
 
-        GPIO.setmode(GPIO.BCM)
+        GPIO.setmode(GPIO.BOARD)
 
         self._setRowsAsInput()
         self._setColumnsAsOutput()
